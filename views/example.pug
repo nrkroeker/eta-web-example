@@ -1,0 +1,10 @@
+extends ../../cre-web-delta/views/delta.pug
+
+include ./x/shared/navbar.pug
+
+block before-root
+    H2 Welcome to Module X
+    +navbar
+
+block after-root
+    p(style="font-size: 0.5em") copyright 2018

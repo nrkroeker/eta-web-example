@@ -2,15 +2,17 @@
   "css": {},
   "redirects": {},
   "dirs": {
-    "controllers": [],
+    "controllers": ["controllers"],
     "models": [],
-    "staticFiles": [],
-    "views": [],
+    "staticFiles": [
+      "static"
+    ],
+    "views": ["views"],
     "lifecycleHandlers": [],
     "requestTransformers": [],
     "subpathHandlers": []
   },
-  "name": "cre-web-x",
+  "name": "cre-web-example",
   "dependencies": [],
   "indexes": [],
   "hooks": {}
