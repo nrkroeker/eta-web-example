@@ -6,13 +6,9 @@ interface RandomNumber {
 
 export default class RandomNumberComponent extends Delta.DynamicComponent<RandomNumber> {
     rand: number;
-    async init(container: string) {
-        this.container = container;
-        await this.getView();
-    }
-
     async load(): Promise<void> {
-        await $.get({
+        await super.load();
+        return $.get({
                 url: "/api/example/number/updateNumber",
                 success: (result: RandomNumber) => {
                     this.rand = result.rand;
