@@ -3,7 +3,7 @@ import RandomNumberComponent from "../dynamic/randomNumber.js";
 
 export class IndexComponent extends Delta.Component {
 
-    rand: RandomNumberComponent;
+    private rand: RandomNumberComponent;
 
     async load(): Promise<void> {
         this.render($("#root"));
