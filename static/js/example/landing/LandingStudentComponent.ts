@@ -9,8 +9,8 @@ export default class LandingStudentComponent extends LandingContentComponent {
     }
 
     public async init(): Promise<void> {
-        this.rand = new RandomNumberComponent("/dynamic/randomNumber");
-        await this.getView();
+        this.rand = new RandomNumberComponent("/dynamic/randomNumber", $("#randomNumber"));
+        await super.init();
         this.output();
     }
 
@@ -18,7 +18,7 @@ export default class LandingStudentComponent extends LandingContentComponent {
         await super.load();
         await this.rand.init();
         await this.rand.load();
-        this.rand.render($("#randomNumber"));
+        this.rand.render();
         $(document).on("click", "#fetch", () => {
             this.fetch();
         });
@@ -28,6 +28,6 @@ export default class LandingStudentComponent extends LandingContentComponent {
         this.rand.update(await $.get({
             url: "/api/example/number/updateNumber"
         }));
-        this.rand.render($("#randomNumber"));
+        this.rand.render();
     }
 }

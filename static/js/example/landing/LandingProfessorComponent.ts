@@ -4,11 +4,11 @@ import LandingContentComponent from "./LandingContentComponent.js";
 export default class LandingProfessorComponent extends LandingContentComponent {
 
     public output(): void {
-        console.log("professor loaded");
+        console.log("professor initialized");
     }
 
     public async init(): Promise<void> {
-        await this.getView();
+        await super.init()
         this.output();
     }
 }

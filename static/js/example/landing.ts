@@ -1,4 +1,4 @@
-import * as Delta from "node_modules/@xroadsed/delta-client/index.js";
+import * as Delta from "../node_modules/@xroadsed/delta-client/index.js";
 import LandingContentComponent from "./landing/LandingContentComponent";
 import * as LandingContentTypes from "./landing/index.js";
 
