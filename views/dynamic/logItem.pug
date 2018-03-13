@@ -1,2 +1,6 @@
-li(data-logIndex="{{index}}") {{ body }}
+li
+    span(d-bind="body title" data-foo="{{title}}") {{title}} {{body}} 
+    input.hidden(type="text") 
     button.delete-log X
+    button.edit-log ✎
+    button.hidden.confirm ✔

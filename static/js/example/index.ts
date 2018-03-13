@@ -16,7 +16,6 @@ export class IndexComponent extends Delta.Component {
         this.render();
         await this.rand.load();
         this.rand.render();
-
         $(document).on("click", "#fetch", () => {
             this.fetch();
         });

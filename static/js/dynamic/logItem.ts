@@ -1,26 +1,23 @@
 import * as Delta from "../node_modules/@xroadsed/delta-client/index.js";
 
 export interface Log {
-    index: number
     body: string;
+    title: string;
 }
 
 export class LogItemComponent extends Delta.DynamicComponent<Log> {
-    public log: Log;
-
-    public update(props: Log) {
-        this.log = props;
-        super.update(this.log);
-    }
-
-    async load(): Promise<void> {
-        await super.load();
-        // return $.get({
-        //         url: "/api/example/number/updateNumber",
-        //         success: (result: Log) => {
-        //             this.log = result.log;
-        //             this.update(result);
-        //         }
-        // });
+    
+    public async load(props: Log): Promise<void> {
+        await super.load(props);
+        $(this.container)
+            .on("click", ".delete-log", () => {
+                this.emit("deleteLog");
+            })
+            .on("click", ".edit-log", () => {
+                this.emit("editLog");
+            })
+            .on("click", ".confirm", () => {
+                this.emit("updateLog");
+            });
     }
 }

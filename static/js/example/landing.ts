@@ -10,12 +10,18 @@ export class LandingComponent extends Delta.Component {
             url: "/api/example/Landing/getUserType"
         });
         this.LandingContent = await this.getLandingPage(userType.userType);
-        await this.LandingContent.init();
-        await this.LandingContent.load();
+
+
     }
 
     private async getLandingPage(type: string): Promise<LandingContentComponent> {
         return new LandingContentTypes[type]("/landing/" + type);
+    }
+
+    public async load(): Promise<void> {
+        await super.load();
+        await this.LandingContent.init();   
+        await this.LandingContent.load();
     }
 }
 
