@@ -1,4 +1,4 @@
-import * as Delta from "../node_modules/@xroadsed/delta-client/index.js";
+import * as Delta from "node_modules/@xroadsed/delta-client/index.js";
 import { LogItemComponent, Log } from "../dynamic/logItem.js";
 
 export default class AnotherComponent extends Delta.Component {

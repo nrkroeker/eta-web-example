@@ -1,4 +1,4 @@
-import * as Delta from "../node_modules/@xroadsed/delta-client/index.js";
+import * as Delta from "node_modules/@xroadsed/delta-client/index.js";
 
 export interface Log {
     body: string;
@@ -6,8 +6,8 @@ export interface Log {
 }
 
 export class LogItemComponent extends Delta.DynamicComponent<Log> {
-    
-    public async load(props: Log): Promise<void> {
+
+    public async load(props: Partial<Log>): Promise<void> {
         await super.load(props);
         $(this.container)
             .on("click", ".delete-log", () => {
