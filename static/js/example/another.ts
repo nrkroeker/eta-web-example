@@ -15,7 +15,7 @@ export default class AnotherComponent extends Delta.Component {
     }
 
     async load(): Promise<void> {
-        this.render();
+        super.load();
         if(this.logComponents.length > 0) {
             Promise.all(
                 this.logComponents.map(async log => {
@@ -45,7 +45,7 @@ export default class AnotherComponent extends Delta.Component {
     public onLogEdit(logComponent: LogItemComponent): () => void {
         return () => {
             const ctx: JQuery = logComponent.context;
-            ctx.find("input").val(logComponent.props.body);
+            ctx.find("input").val(logComponent.getProps().body);
             ctx.find(".hidden").removeClass("hidden");
             ctx.find("span, .edit-log").addClass("hidden");
         }

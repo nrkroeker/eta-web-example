@@ -18,6 +18,7 @@ export class IndexComponent extends Delta.Component {
         $(document).on("click", "#fetch", () => {
             this.fetch();
         });
+
     }
 
     public async fetch(): Promise<void> {
