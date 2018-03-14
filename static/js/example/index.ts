@@ -1,4 +1,4 @@
-import * as Delta from "node_modules/@xroadsed/delta-client/index.js";
+import * as Delta from "../node_modules/@xroadsed/delta-client/index.js";
 import RandomNumberComponent from "../dynamic/randomNumber.js";
 
 export class IndexComponent extends Delta.Component {
@@ -8,11 +8,11 @@ export class IndexComponent extends Delta.Component {
     public async init(): Promise<void> {
         await super.init();
         let randomNumTemplate = await RandomNumberComponent.getTemplate("/dynamic/randomNumber");
-        this.rand = new RandomNumberComponent("/dynamic/randomNumber", null, randomNumTemplate, "#rand-container");
+        this.rand = new RandomNumberComponent("/dynamic/randomNumber", "#rand-container", randomNumTemplate);
     }
 
     public async load(): Promise<void> {
-        super.load();
+        await super.load();
         await this.rand.load();
 
         $(document).on("click", "#fetch", () => {

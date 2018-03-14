@@ -9,7 +9,7 @@ export class LogItemComponent extends Delta.DynamicComponent<Log> {
 
     public async load(props: Partial<Log>): Promise<void> {
         await super.load(props);
-        $(this.container)
+        this.context
             .on("click", ".delete-log", () => {
                 this.emit("deleteLog");
             })
