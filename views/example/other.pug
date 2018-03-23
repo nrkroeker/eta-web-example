@@ -1,4 +1,6 @@
-extends ../../../cre-web-delta/views/shared/component.pug
+extends ../../../cre-web-delta/views/component-layout.pug
 
 block delta-component
-    p And now you've made it to the world of the other
+    p.other-style And now you've made it to the world of the other
+    a(href="/index" data-navigo) Home
+    a(href="/another" data-navigo) Another

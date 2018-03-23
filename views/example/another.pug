@@ -1,0 +1,11 @@
+extends ../../../cre-web-delta/views/component-layout.pug
+
+block delta-component
+    h1 Welcome to the log!
+    a(href="/index" data-navigo) Home
+    a(href="/other" data-navigo) Other
+    p.another-style THIS PAGE IS SUPER FAR AWAY
+    input#new-log(type="text")
+    button#log-submit New Log
+
+    ul#log-container

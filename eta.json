@@ -13,7 +13,10 @@
     "subpathHandlers": []
   },
   "name": "cre-web-example",
-  "dependencies": [],
+  "dependencies": [
+    "crossroads-education/eta-web-shared",
+    "crossroads-education/eta-web-delta"
+  ],
   "indexes": [],
   "hooks": {}
 }
